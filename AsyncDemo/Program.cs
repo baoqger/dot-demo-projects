@@ -1,6 +1,6 @@
 ﻿namespace AsyncDemo
 {
-    internal class Program
+    public class Program
     {
         static async Task Main(string[] args)
         {
@@ -11,6 +11,8 @@
                 Task.Run(() => DoSomethingAsync(1)),
                 Task.Run(() => DoSomethingAsync2(1))
             );
+
+            
         }
 
         static public Task DoSomethingAsync(int n) {
@@ -33,5 +35,19 @@
 
             return Task.FromResult(true);
         }
+
+        static public async Task<string> GetStringAsync()
+        {
+            await Task.Delay(1000);
+            return "Hello";
+        }
+
+        static public async Task<int> GetIntAsync()
+        {
+            await Task.Delay(2000);
+            return 42;
+        }
     }
+
+
 }
