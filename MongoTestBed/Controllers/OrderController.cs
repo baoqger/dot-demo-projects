@@ -26,7 +26,7 @@ namespace MongoTestBed.Controllers
             };
             await _ordersService.CreateOrderAsync(newOrder);
 
-            return CreatedAtAction(nameof(Create), new { id = newOrder.Id }, newOrder);
+            return CreatedAtAction(nameof(Create), new { id = newOrder.OrderId }, newOrder);
         }
 
         [HttpGet]

@@ -13,7 +13,11 @@ namespace MongoTestBed
             builder.Services.Configure<OrderStoreDatabaseSettings>(
     builder.Configuration.GetSection("OrderStoreDatabase"));
 
+            builder.Services.Configure<AlarmStoreDatabaseSettings>(
+builder.Configuration.GetSection("AlarmStoreDatabase"));
+
             builder.Services.AddSingleton<OrdersService>();
+            builder.Services.AddSingleton<AlarmsService>();
 
 
             builder.Services.AddControllers();

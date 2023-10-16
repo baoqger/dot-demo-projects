@@ -7,7 +7,7 @@ namespace MongoTestBed.Models
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
-        public string? Id { get; set; }
+        public string? OrderId { get; set; }
         public string? ProductName { get; set; }
 
         public int ProductQuantity { get; set; }
