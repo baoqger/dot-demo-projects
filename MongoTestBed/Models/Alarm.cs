@@ -3,6 +3,7 @@ using MongoDB.Bson;
 
 namespace MongoTestBed.Models
 {
+    [BsonIgnoreExtraElements]
     public class Alarm
     {
         public string AlarmId { get; set; }
@@ -20,6 +21,10 @@ namespace MongoTestBed.Models
     }
 
     public class CreateAlarmRequestModel { 
+
+
+
+
         public string? Category { get; set; }
         public bool IsCompleted { get; set; }
         public string? Severity { get; set; }

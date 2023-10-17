@@ -1,5 +1,6 @@
 using MongoTestBed.Models;
 using MongoTestBed.Services;
+using MongoTestBed.Repositories;
 
 namespace MongoTestBed
 {
@@ -10,15 +11,13 @@ namespace MongoTestBed
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
-            builder.Services.Configure<OrderStoreDatabaseSettings>(
-    builder.Configuration.GetSection("OrderStoreDatabase"));
+            builder.Services.Configure<OrderStoreDatabaseSettings>(builder.Configuration.GetSection("OrderStoreDatabase"));
 
-            builder.Services.Configure<AlarmStoreDatabaseSettings>(
-builder.Configuration.GetSection("AlarmStoreDatabase"));
+            builder.Services.Configure<AlarmStoreDatabaseSettings>(builder.Configuration.GetSection("AlarmStoreDatabase"));
 
             builder.Services.AddSingleton<OrdersService>();
             builder.Services.AddSingleton<AlarmsService>();
-
+            builder.Services.AddSingleton<AlarmsRepository>();
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

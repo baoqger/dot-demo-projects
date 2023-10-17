@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "AsyncDemo": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:54940;http://localhost:54956"
+    }
+  }
+}

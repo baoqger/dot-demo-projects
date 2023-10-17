@@ -16,28 +16,16 @@ namespace MongoTestBed.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody] CreateAlarmRequestModel request)
+        public async Task<Alarm> Create([FromBody] CreateAlarmRequestModel request)
         {
-            Alarm newAlarm = new Alarm
-            {
-                AlarmId = Guid.NewGuid().ToString(),
-                Category = request.Category,
-                IsCompleted = request.IsCompleted,
-                Histories = new List<AlarmHistory> {}
-            };
-            AlarmHistory newHistory = new AlarmHistory
-            {
-                HistoryId = Guid.NewGuid().ToString(),
-                Severity = request.Severity,
-                StartTime = DateTimeOffset.UtcNow,
-                Description= request.Description
-            };
-            newAlarm.Histories.Add(newHistory);
-            await _alarmsService.CreateAlarmAsync(newAlarm);
-
-            return CreatedAtAction(nameof(Create), new { id = newAlarm.AlarmId }, newAlarm);
+            return await _alarmsService.CreateAlarmAsync(request);
         }
-
+        [HttpPut]
+        public async Task<IActionResult> Update([FromBody] UpdateAlarmRequestModel request)
+        {
+            await _alarmsService.UpdateAlarmAsync(request.AlarmId, request.HistoryId, request.IsCompleted, request.Severity, request.Description);
+            return CreatedAtAction(nameof(Update), new { id = request.AlarmId }, null);
+        }
 
     }
 }

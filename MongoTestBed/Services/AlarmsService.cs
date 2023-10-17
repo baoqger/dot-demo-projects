@@ -2,40 +2,41 @@
 using MongoDB.Driver;
 using MongoDB.Driver.Linq;
 using MongoTestBed.Models;
+using MongoTestBed.Repositories;
 
 namespace MongoTestBed.Services
 {
     public class AlarmsService
     {
-        private readonly IMongoCollection<Alarm> _alarmsCollection;
 
-        public AlarmsService(
-    IOptions<AlarmStoreDatabaseSettings> alarmStoreDatabaseSettings
-)
+        private readonly AlarmsRepository _alarmsRepository;
+        public AlarmsService(AlarmsRepository alarmsRepository)
         {
-            var mongoClient = new MongoClient(
-                alarmStoreDatabaseSettings.Value.ConnectionString);
-
-            var mongoDatabase = mongoClient.GetDatabase(
-                alarmStoreDatabaseSettings.Value.DatabaseName);
-
-            _alarmsCollection = mongoDatabase.GetCollection<Alarm>(
-                alarmStoreDatabaseSettings.Value.AlarmsCollectionName);
-
+            _alarmsRepository = alarmsRepository;
         }
 
-        public async Task CreateAlarmAsync(Alarm newAlarm) {
-            await _alarmsCollection.InsertOneAsync(newAlarm);
+        public async Task<Alarm> CreateAlarmAsync(CreateAlarmRequestModel request) {
+            Alarm newAlarm = new Alarm
+            {
+                AlarmId = Guid.NewGuid().ToString(),
+                Category = request.Category,
+                IsCompleted = request.IsCompleted,
+                Histories = new List<AlarmHistory> { }
+            };
+            AlarmHistory newHistory = new AlarmHistory
+            {
+                HistoryId = Guid.NewGuid().ToString(),
+                Severity = request.Severity,
+                StartTime = DateTimeOffset.UtcNow,
+                Description = request.Description
+            };
+            newAlarm.Histories.Add(newHistory);
+            await _alarmsRepository.CreateAlarmAsync(newAlarm);
+            return newAlarm;
         }
 
-        public async Task UpdateAlarmAsync(string alarmId, string historyId, string isCompleted, string newSeverity, string newDes) {
-            var filter = Builders<Alarm>.Filter.And(
-                    Builders<Alarm>.Filter.Eq(a => a.AlarmId, alarmId),
-                    Builders<Alarm>.Filter.ElemMatch(a => a.Histories, h => h.HistoryId == historyId)
-                );
-            var update = Builders<Alarm>.Update
-                            .Set(a => a.Histories.FirstMatchingElement().EndTime, DateTimeOffset.UtcNow);
-            await _alarmsCollection.UpdateOneAsync(filter, update);
+        public async Task UpdateAlarmAsync(string alarmId, string historyId, bool isCompleted, string newSeverity, string newDes) {
+            await _alarmsRepository.UpdateAlarmAsync(alarmId, historyId, isCompleted, newSeverity, newDes);
         }
     }
 }
