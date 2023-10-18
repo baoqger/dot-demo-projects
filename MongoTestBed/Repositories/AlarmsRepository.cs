@@ -10,6 +10,7 @@ namespace MongoTestBed.Repositories
         private readonly IMongoCollection<Alarm> _alarmsCollection;
         private readonly MongoClient _mongoClient;
         private readonly IMongoDatabase _mongoDatabase;
+        private static readonly SemaphoreSlim _lock = new SemaphoreSlim(1, 1);
 
         public AlarmsRepository(IOptions<AlarmStoreDatabaseSettings> alarmStoreDatabaseSettings) {
             _mongoClient = new MongoClient(alarmStoreDatabaseSettings.Value.ConnectionString);
@@ -25,30 +26,39 @@ namespace MongoTestBed.Repositories
         }
 
         public async Task UpdateAlarmAsync(string alarmId, string historyId, bool isCompleted, string newSeverity, string newDes) {
-            // validate first
-            var alarmFilter = Builders<Alarm>.Filter.Eq(a => a.AlarmId, alarmId);
-            var alarm = await _alarmsCollection.Find<Alarm>(alarmFilter).FirstOrDefaultAsync();
-            var histories = alarm.Histories;
-            var history = histories?.Find((h) => h.HistoryId == historyId);
-            if (alarm.IsCompleted || history?.EndTime != DateTimeOffset.MinValue) {
-                return;
+            await _lock.WaitAsync();
+            try {
+                // validate first
+                var alarmFilter = Builders<Alarm>.Filter.Eq(a => a.AlarmId, alarmId);
+                var alarm = await _alarmsCollection.Find<Alarm>(alarmFilter).FirstOrDefaultAsync();
+                var histories = alarm.Histories;
+                var history = histories?.Find((h) => h.HistoryId == historyId);
+                if (alarm.IsCompleted || history?.EndTime != DateTimeOffset.MinValue)
+                {
+                    return;
+                }
+
+                history.EndTime = DateTimeOffset.UtcNow;
+                var newHistory = new AlarmHistory
+                {
+                    HistoryId = Guid.NewGuid().ToString(),
+                    Severity = newSeverity,
+                    Description = newDes,
+                    StartTime = DateTimeOffset.UtcNow,
+                };
+                histories?.Add(newHistory);
+
+                var update = Builders<Alarm>.Update
+                                .Set(a => a.IsCompleted, isCompleted)
+                                .Set(a => a.Histories, histories);
+
+                await _alarmsCollection.UpdateOneAsync(alarmFilter, update);
+
+            } finally
+            {
+                _lock.Release();
             }
 
-            history.EndTime = DateTimeOffset.UtcNow;
-            var newHistory = new AlarmHistory
-            {
-                HistoryId = Guid.NewGuid().ToString(),
-                Severity = newSeverity,
-                Description = newDes,
-                StartTime = DateTimeOffset.UtcNow,
-            };
-            histories?.Add(newHistory);
-
-            var update = Builders<Alarm>.Update
-                            .Set(a => a.IsCompleted, isCompleted)
-                            .Set(a => a.Histories, histories);
-
-            await _alarmsCollection.UpdateOneAsync(alarmFilter, update);
         }
 
         public async Task UpdateAlarmWithTransactionAsync(string alarmId, string historyId, bool isCompleted, string newSeverity, string newDes)
