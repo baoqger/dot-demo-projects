@@ -33,12 +33,14 @@ namespace MongoTestBed.Controllers
         }
 
         [HttpGet, Route("test")]
-        public void TestGet(string id, DateTimeOffset? startTime = null, DateTimeOffset? endTime = null) {
-            if (!startTime.HasValue) startTime = DateTimeOffset.MinValue;
-            if (!endTime.HasValue) endTime = DateTimeOffset.MaxValue;
-            Console.WriteLine("debug xxxxx", startTime.Value);
-            _alarmsService.Debug(id, startTime, endTime);
-            return; 
+        public async Task<Order> TestGet(string id, DateTimeOffset? startTime = null, DateTimeOffset? endTime = null) {
+            var o = new Order {
+                OrderId = Guid.NewGuid().ToString(),
+                ProductName = "test",
+                ProductQuantity = 1,
+                CreateTime = DateTimeOffset.UtcNow
+            };
+            return o;
         }
 
     }
