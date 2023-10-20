@@ -20,6 +20,11 @@ namespace MongoTestBed.Repositories
             _alarmsCollection = _mongoDatabase.GetCollection<Alarm>(alarmStoreDatabaseSettings.Value.AlarmsCollectionName);
         }
 
+        public async Task<List<Alarm>> GetAlarmsAsync() {
+            var filter = Builders<Alarm>.Filter.Empty;
+            return await _alarmsCollection.Find(filter).ToListAsync();
+        }
+
         public async Task CreateAlarmAsync(Alarm newAlarm)
         {
             await _alarmsCollection.InsertOneAsync(newAlarm);

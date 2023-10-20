@@ -46,7 +46,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UTF8", "UTF8\UTF8.csproj", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "polymorphism", "polymorphism\polymorphism.csproj", "{779E2038-A8D3-41F3-A073-E41C013603FF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MongoTestBed", "MongoTestBed\MongoTestBed.csproj", "{E9BE4A22-C1FC-491F-B62A-F5FB223B1470}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MongoTestBed", "MongoTestBed\MongoTestBed.csproj", "{E9BE4A22-C1FC-491F-B62A-F5FB223B1470}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrameWorkTest", "ConsoleApp2\FrameWorkTest.csproj", "{BA86DAF5-84C4-4C0B-994D-ED73DDCC87B4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -138,6 +140,10 @@ Global
 		{E9BE4A22-C1FC-491F-B62A-F5FB223B1470}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E9BE4A22-C1FC-491F-B62A-F5FB223B1470}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E9BE4A22-C1FC-491F-B62A-F5FB223B1470}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA86DAF5-84C4-4C0B-994D-ED73DDCC87B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA86DAF5-84C4-4C0B-994D-ED73DDCC87B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA86DAF5-84C4-4C0B-994D-ED73DDCC87B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA86DAF5-84C4-4C0B-994D-ED73DDCC87B4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

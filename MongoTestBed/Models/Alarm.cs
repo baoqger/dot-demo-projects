@@ -1,5 +1,6 @@
 ﻿using MongoDB.Bson.Serialization.Attributes;
 using MongoDB.Bson;
+using System.ComponentModel.DataAnnotations;
 
 namespace MongoTestBed.Models
 {
@@ -22,13 +23,13 @@ namespace MongoTestBed.Models
 
     public class CreateAlarmRequestModel { 
 
-
-
-
         public string? Category { get; set; }
         public bool IsCompleted { get; set; }
         public string? Severity { get; set; }
         public string? Description { get; set; }
+        
+        public DateTimeOffset StartTime { get; set; }
+        public DateTimeOffset EndTime { get; set; }
 
     }
 
