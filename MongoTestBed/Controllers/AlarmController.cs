@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MongoTestBed.Models;
 using MongoTestBed.Services;
+using System.Net;
+using System.Security.Claims;
 
 namespace MongoTestBed.Controllers
 {
@@ -29,6 +31,7 @@ namespace MongoTestBed.Controllers
         [HttpGet]
         public async Task<List<Alarm>> Get() 
         {
+            GetUserId();
             return await _alarmsService.GetAlarmsAsync();
         }
 
@@ -41,6 +44,13 @@ namespace MongoTestBed.Controllers
                 CreateTime = DateTimeOffset.UtcNow
             };
             return o;
+        }
+
+        private string GetUserId() {
+            var claimsIdentity = (User.Identity as ClaimsIdentity);
+            var userIdentity = claimsIdentity?.FindFirst(ClaimTypes.Email)?.Value;
+
+            return userIdentity;
         }
 
     }
