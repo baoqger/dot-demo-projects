@@ -56,7 +56,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReflectionDemo", "Reflectio
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFGetStarted", "EFGetStarted\EFGetStarted.csproj", "{DAD24C87-AEF5-4420-98F4-DE2791D78AC5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Concurrency", "Concurrency\Concurrency.csproj", "{336475BC-1FCD-4D04-9E18-261E6D515C86}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Concurrency", "Concurrency\Concurrency.csproj", "{336475BC-1FCD-4D04-9E18-261E6D515C86}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Config", "Config\Config.csproj", "{75BDD230-E8A8-415A-809C-712D98D3EEA9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpecFlowCalculator", "SpecFlowCalculator\SpecFlowCalculator.csproj", "{972D8ABD-1449-4239-86F2-4B5D6E125D83}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpecFlowCalculator.Specs", "SpecFlowCalculator.Specs\SpecFlowCalculator.Specs.csproj", "{821B1CEA-1952-49D7-922C-392E4CAF9EB8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -168,6 +174,18 @@ Global
 		{336475BC-1FCD-4D04-9E18-261E6D515C86}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{336475BC-1FCD-4D04-9E18-261E6D515C86}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{336475BC-1FCD-4D04-9E18-261E6D515C86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75BDD230-E8A8-415A-809C-712D98D3EEA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75BDD230-E8A8-415A-809C-712D98D3EEA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75BDD230-E8A8-415A-809C-712D98D3EEA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75BDD230-E8A8-415A-809C-712D98D3EEA9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{972D8ABD-1449-4239-86F2-4B5D6E125D83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{972D8ABD-1449-4239-86F2-4B5D6E125D83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{972D8ABD-1449-4239-86F2-4B5D6E125D83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{972D8ABD-1449-4239-86F2-4B5D6E125D83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{821B1CEA-1952-49D7-922C-392E4CAF9EB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{821B1CEA-1952-49D7-922C-392E4CAF9EB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{821B1CEA-1952-49D7-922C-392E4CAF9EB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{821B1CEA-1952-49D7-922C-392E4CAF9EB8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
