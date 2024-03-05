@@ -62,13 +62,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Config", "Config\Config.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpecFlowCalculator", "SpecFlowCalculator\SpecFlowCalculator.csproj", "{972D8ABD-1449-4239-86F2-4B5D6E125D83}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpecFlowCalculator.Specs", "SpecFlowCalculator.Specs\SpecFlowCalculator.Specs.csproj", "{821B1CEA-1952-49D7-922C-392E4CAF9EB8}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpecFlowCalculator.MSTestTag", "SpecFlowCalculator.MSTestTag\SpecFlowCalculator.MSTestTag.csproj", "{61C3BB00-7209-4E2D-BF4E-EA3F569E6CDD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpecFlowCalculator.GlobalSteps", "SpecFlowCalculator.GlobalSteps\SpecFlowCalculator.GlobalSteps.csproj", "{888966CC-18D0-44A8-AFA0-57D6B96BCCE6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpecFlowCalculator.GlobalSteps", "SpecFlowCalculator.GlobalSteps\SpecFlowCalculator.GlobalSteps.csproj", "{888966CC-18D0-44A8-AFA0-57D6B96BCCE6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpecFlowBaseClassIssueDemo", "SpecFlowBaseClassIssueDemo\SpecFlowBaseClassIssueDemo.csproj", "{20BA1C1B-4866-4B4A-844F-02E8D1D694EB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpecFlowBaseClassIssueDemo", "SpecFlowBaseClassIssueDemo\SpecFlowBaseClassIssueDemo.csproj", "{20BA1C1B-4866-4B4A-844F-02E8D1D694EB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -188,10 +186,6 @@ Global
 		{972D8ABD-1449-4239-86F2-4B5D6E125D83}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{972D8ABD-1449-4239-86F2-4B5D6E125D83}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{972D8ABD-1449-4239-86F2-4B5D6E125D83}.Release|Any CPU.Build.0 = Release|Any CPU
-		{821B1CEA-1952-49D7-922C-392E4CAF9EB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{821B1CEA-1952-49D7-922C-392E4CAF9EB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{821B1CEA-1952-49D7-922C-392E4CAF9EB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{821B1CEA-1952-49D7-922C-392E4CAF9EB8}.Release|Any CPU.Build.0 = Release|Any CPU
 		{61C3BB00-7209-4E2D-BF4E-EA3F569E6CDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{61C3BB00-7209-4E2D-BF4E-EA3F569E6CDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{61C3BB00-7209-4E2D-BF4E-EA3F569E6CDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
