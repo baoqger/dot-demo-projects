@@ -44,6 +44,7 @@ namespace SpecFlowCalculator.Specs.StepDefinitions
         public void ThenTheResultShouldBe(int result)
         {
             //TODO: implement assert (verification) logic
+            Thread.Sleep(1000 * 10);
 
             _result.Should().Be(result);
         }
