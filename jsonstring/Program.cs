@@ -6,6 +6,11 @@ class Program
 {
     static void Main()
     {
+        var a = new Dictionary<int, string>{
+            { 1, "a"},
+            { 2, "b" }
+        };
+
         // Define a sample object
         Person p1 = new Person
         {

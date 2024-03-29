@@ -3,28 +3,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TechTalk.SpecFlow;
 
 namespace SpecFlowBaseClassIssueDemo.StepDefinitions
 {
     [Binding]
-    public class StepDerivationAClass: StepBaseClass
+    public class StepDerivationAClass : StepBaseClass
     {
-        //public StepDerivationAClass(ScenarioContext scenarioContext) : base(scenarioContext)
-        //{
-        //}
 
         [Given(@"boz")]
         public void GivenBoz()
         {
-            Thread.Sleep(3000);
             Console.WriteLine("this is step boz");
+            PrintStepText();
         }
 
         [Given(@"foo")]
         public void GivenFoo()
         {
-            Thread.Sleep(3000);
             Console.WriteLine("This is step foo");
+            PrintStepText();
         }
     }
 }

@@ -20,7 +20,7 @@ namespace SpecFlowBaseClassIssueDemo.Features
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute()]
-    public partial class BaseClassIssueDemoFeature
+    public partial class SecondDemoFeature
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
@@ -29,7 +29,7 @@ namespace SpecFlowBaseClassIssueDemo.Features
         
         private static string[] featureTags = ((string[])(null));
         
-#line 1 "BaseClassIssueDemo.feature"
+#line 1 "Second.feature"
 #line hidden
         
         public virtual Microsoft.VisualStudio.TestTools.UnitTesting.TestContext TestContext
@@ -48,7 +48,7 @@ namespace SpecFlowBaseClassIssueDemo.Features
         public static void FeatureSetup(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext testContext)
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "BaseClassIssueDemo", @"![Calculator](https://specflow.org/wp-content/uploads/2020/09/calculator.png)
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "SecondDemo", @"![Calculator](https://specflow.org/wp-content/uploads/2020/09/calculator.png)
 Simple calculator for adding **two** numbers
 
 Link to a feature: [Calculator](SpecFlowBaseClassIssueDemo/Features/Calculator.feature)
@@ -67,9 +67,9 @@ Link to a feature: [Calculator](SpecFlowBaseClassIssueDemo/Features/Calculator.f
         public void TestInitialize()
         {
             if (((testRunner.FeatureContext != null) 
-                        && (testRunner.FeatureContext.FeatureInfo.Title != "BaseClassIssueDemo")))
+                        && (testRunner.FeatureContext.FeatureInfo.Title != "SecondDemo")))
             {
-                global::SpecFlowBaseClassIssueDemo.Features.BaseClassIssueDemoFeature.FeatureSetup(null);
+                global::SpecFlowBaseClassIssueDemo.Features.SecondDemoFeature.FeatureSetup(null);
             }
         }
         
@@ -96,15 +96,15 @@ Link to a feature: [Calculator](SpecFlowBaseClassIssueDemo/Features/Calculator.f
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("step definition inheritance")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "BaseClassIssueDemo")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("step definition inheritance2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "SecondDemo")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("mytag")]
-        public void StepDefinitionInheritance()
+        public void StepDefinitionInheritance2()
         {
             string[] tagsOfScenario = new string[] {
                     "mytag"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("step definition inheritance", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("step definition inheritance2", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 9
 this.ScenarioInitialize(scenarioInfo);
 #line hidden

@@ -6,6 +6,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  
+  
   <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.0.0" />
     <PackageReference Include="SpecFlow.Plus.LivingDocPlugin" Version="3.9.57" />
@@ -15,6 +17,16 @@
     <PackageReference Include="FluentAssertions" Version="6.2.0" />
   </ItemGroup>
 
+
+
+  <ItemGroup>
+    <None Include="Features\*.feature" CopyToOutputDirectory="Always" />
+  </ItemGroup>
+  
+  <!--<Target Name="CopyCustomContent" AfterTargets="AfterBuild">
+    <Copy SourceFiles="xml" DestinationFolder="$(OutDir)" />
+  </Target>-->
+  
   <ItemGroup>
     <Folder Include="Drivers\" />
     <Folder Include="Support\" />
