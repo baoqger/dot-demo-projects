@@ -9,8 +9,9 @@ namespace InheritanceShareData
         {
             Console.WriteLine("Hello, World!");
             var Context = new ComputationContext();
+            var Context2 = new ComputationContext();
             var stageRig = new StageRig(Context);
-            var stageChannel = new StageChannel(Context);
+            var stageChannel = new StageChannel(Context2);
 
             Console.WriteLine("debug: " + stageChannel.Process());
 
