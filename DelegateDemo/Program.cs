@@ -1,8 +1,13 @@
-﻿namespace DelegateDemo
+﻿using System.Threading;
+using System.IO;
+
+namespace DelegateDemo
 {
     internal class Program
     {
-        delegate int MathOperation(int a, int b);
+        public delegate int MathOperation(int a, int b);
+
+        public delegate void ProgressReporter(int percentComplete);
 
         // Method to add two numbers
         static int Add(int a, int b)
@@ -18,17 +23,21 @@
 
         static void Main(string[] args)
         {
-            // Create delegate instances and associate them with methods
-            MathOperation add = Add;
-            MathOperation subtract = Subtract;
+            // multicast delegate
+            ProgressReporter p = WriteProgressToConsole;
+            p += WriteProgressToFile;
+            HardWork(p);
 
-            // Use the delegates to perform calculations
-            int result1 = add(5, 3);        // Invokes Add method
-            int result2 = subtract(8, 4);   // Invokes Subtract method
-
-            // Display the results
-            Console.WriteLine("Result of addition: " + result1);
-            Console.WriteLine("Result of subtraction: " + result2);
         }
+
+        public static void HardWork(ProgressReporter p) {
+            for (int i = 0; i < 10; i++) {
+                p(i * 10);
+                Thread.Sleep(100);
+            }
+        }
+
+        static void WriteProgressToConsole(int percentComplete) => Console.WriteLine(percentComplete);
+        static void WriteProgressToFile(int percentComplete) => File.WriteAllText(@"C:\Users\jbao6\Desktop\progress.txt", percentComplete.ToString());
     }
 }
