@@ -17,7 +17,26 @@ namespace HighPerformanceNETChapterFive
             // TestContinue();
             // TestCancellation();
             // TestExceptionHandling();
-            TestTPLDataFlow(@"C:\Users\jbao6\Downloads\txt");
+            // TestTPLDataFlow(@"C:\Users\jbao6\Downloads\txt");
+            TestParallelLoop(@"C:\Users\jbao6\Downloads\txt");
+        }
+
+        private static void TestParallelLoop(string inputPath) {
+            if (!Directory.Exists(inputPath)) {
+                Console.WriteLine("The directory does not exist.");
+                return;
+            }
+            long totalSize = 0;
+            string[] files = Directory.GetFiles(inputPath);
+            Parallel.For(0, files.Length, 
+                index => {
+                    Console.WriteLine("Analyzing file: " + files[index]);
+                    FileInfo fi = new FileInfo(files[index]);
+                    long size = fi.Length;
+                    Interlocked.Add(ref totalSize, size);
+                });
+            Console.WriteLine("Directory '{0}':", inputPath);
+            Console.WriteLine("{0:N0} files, {1:N0} bytes", files.Length, totalSize);
         }
 
         private static void TestTPLDataFlow(string inputPath) { 
