@@ -7,9 +7,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-    <PackageReference Include="Slb.Prism.Shared.Library.ComputationEngine" Version="4.1.0.8951934" />
-  </ItemGroup>
-
 </Project>

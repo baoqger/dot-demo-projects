@@ -1,6 +1,9 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using System.Text.Json;
+using Slb.Prism.Shared.Library.ComputationEngine.DataModel;
+using Slb.Prism.Shared.Contract.ComputationEngine.DataModel;
+using System.Text;
 
 namespace PrepareSlideSheetData
 {
@@ -8,6 +11,10 @@ namespace PrepareSlideSheetData
     {
         static void Main(string[] args)
         {
+            ProcessQC();
+            Console.ReadLine();
+            return;
+
             Console.WriteLine("Hello, World!");
             var inputPath = @"C:\Users\jbao6\Desktop\automaticslide\minify.json";
             var content = File.ReadAllText(inputPath);
@@ -15,7 +22,7 @@ namespace PrepareSlideSheetData
             // Console.WriteLine(channels?.Log[0].Data[0].Value);
             var holeDepths = channels?.Log[0];
 
-            Console.ReadLine();
+            // Console.ReadLine();
 
             var mocks = GenerateChannelLogs();
             mocks.Log.Add(holeDepths);
@@ -23,11 +30,26 @@ namespace PrepareSlideSheetData
             File.WriteAllText(outputPath, JsonConvert.SerializeObject(mocks, new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() }));
         }
 
+        public static void ProcessQC() {
+            string qcstring = "eyJ3ZWxsSWQiOiIxMjM0NTY4NzkiLCJhbGdvcml0aG0iOm51bGwsImNvbnN1bWVyIjoiTVNFLEF1dG9tYXRpYyBTbGlkZSBTaGVldCIsImdyb3VwIjoiU3VyZmFjZSIsImRhdGEiOiJSSUdfU1RBVEUiLCJxdWFudGl0eSI6bnVsbCwic291cmNlVGltZSI6IjIwMTQtMDUtMDNUMDA6MDA6MDArMDA6MDAiLCJzdGF0dXMiOiJVcFRvRGF0ZSIsImRhdGFUeXBlIjoiQ2hhbm5lbEZhbWlseSIsImRldGFpbHMiOlt7InF1YWxpdHlDYXRlZ29yeSI6IkNvbXBsZXRlbmVzcyIsInNldmVyaXR5IjoiT2siLCJkZXNjcmlwdGlvbiI6bnVsbCwiY29udmVydGlibGVEZXNjcmlwdGlvbiI6eyJleHByZXNzaW9uIjoiUklHX1NUQVRFIGlzIHJlY2VpdmVkLiIsInZhbHVlcyI6bnVsbH0sImFkdmljZSI6bnVsbCwiY29udmVydGlibGVBZHZpY2UiOnsiZXhwcmVzc2lvbiI6IiIsInZhbHVlcyI6bnVsbH19LHsicXVhbGl0eUNhdGVnb3J5IjoiVmFsaWRpdHkiLCJzZXZlcml0eSI6Ik9rIiwiZGVzY3JpcHRpb24iOm51bGwsImNvbnZlcnRpYmxlRGVzY3JpcHRpb24iOnsiZXhwcmVzc2lvbiI6IlJJR19TVEFURSB2YWx1ZSBpcyB3aXRoaW4gdGhlIGV4cGVjdGVkIHJhbmdlLiIsInZhbHVlcyI6bnVsbH0sImFkdmljZSI6bnVsbCwiY29udmVydGlibGVBZHZpY2UiOnsiZXhwcmVzc2lvbiI6IiIsInZhbHVlcyI6bnVsbH19XX0=";
+            byte[] jsonDQBytes = Convert.FromBase64String(qcstring);
+            string jsonDQ = Encoding.UTF8.GetString(jsonDQBytes);
+            var dq = JsonConvert.DeserializeObject<QcItemModel>(jsonDQ);
+            Console.WriteLine("debug qc: 000000 \n"  + dq.Consumer);
+
+            return;
+            dq.Consumer = "MSE,Automatic Slide Sheet";
+            var json1 = JsonConvert.SerializeObject(dq);
+            var bytes = Encoding.UTF8.GetBytes(json1);
+            string base64String = Convert.ToBase64String(bytes);
+            Console.WriteLine(base64String);
+        }
+
         public static ChannelData GenerateChannelLogs() { 
             var channels = new ChannelData();
             List<ChannelLog> logs = new List<ChannelLog>() { 
                 new ChannelLog { 
-                    InputKey = "WOB",
+                    InputKey = "Downhole_WOB",
                     Uri = "test",
                     Mnemonic = "test",
                     Unit = "test",
@@ -38,7 +60,7 @@ namespace PrepareSlideSheetData
                     Derivation = "raw"
                 },
                 new ChannelLog {
-                    InputKey = "ROP",
+                    InputKey = "DEPTH_ROP",
                     Uri = "test",
                     Mnemonic = "test",
                     Unit = "test",

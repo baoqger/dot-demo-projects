@@ -12,17 +12,16 @@ namespace ConsoleTest
     {
         static void Main(string[] args)
         {
-            var result = new List<int>();
-
-            var a = new List<int>() { 1 };
-            var b = new List<int>() { 2 };
-            var c = new List<int>();
-
-
-            Console.WriteLine(result.Count);
-            foreach (var e in result) { 
-                Console.WriteLine(e);
-            }
+            var states = new Dictionary<string, string>();
+            double a = 1;
+            var b = a.ToString();
+            states["key1"] = b;
+            string c = "1";
+            var d = double.Parse(c);
+            Console.WriteLine(d);
+            
+            var t = new DateTimeOffset(1900, 1, 1, 0, 0, 0, new TimeSpan(0, 0, 0));
+            Console.WriteLine(t.ToString());
             Console.ReadLine();
             return;
             // Create the outer dictionary
