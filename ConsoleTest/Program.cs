@@ -1,28 +1,61 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 using LibA;
 using Newtonsoft.Json;
 
 namespace ConsoleTest
 {
+    public class RawChannelData {
+        public DateTimeOffset TimeIndex { get; set; }
+        public double Value { get; set; }
+    }
+
     public class Program
     {
         static void Main(string[] args)
         {
-            var states = new Dictionary<string, string>();
-            double a = 1;
-            var b = a.ToString();
-            states["key1"] = b;
-            string c = "1";
-            var d = double.Parse(c);
-            Console.WriteLine(d);
+            var channelsData = new Dictionary<string, Dictionary<DateTimeOffset, object>>();
+            var now = DateTimeOffset.UtcNow;
+            var mobDic = new Dictionary<DateTimeOffset, object>() {
+                { now, 0.1},
+                { now.AddSeconds(1), 0.2},
+                { now.AddSeconds(2), 0.3},
+                { now.AddSeconds(3), 0.3}
+            };
+            channelsData.Add("mob", mobDic);
+
+            var ropDic = new Dictionary<DateTimeOffset, object>() {
+                { now, 0.1},
+                { now.AddSeconds(3), 0.3},
+                { now.AddSeconds(1), 0.2},
+                { now.AddSeconds(2), 0.0}
+                
+            };
+            channelsData.Add("rop", ropDic);
+
+            var rpmDic = new Dictionary<DateTimeOffset, object>();
+            channelsData.Add("rpm", rpmDic);
+
             
-            var t = new DateTimeOffset(1900, 1, 1, 0, 0, 0, new TimeSpan(0, 0, 0));
-            Console.WriteLine(t.ToString());
+
+            var lastData = new Dictionary<string, KeyValuePair<DateTimeOffset, object>>();
+            
+            var lastROP = new KeyValuePair<DateTimeOffset, object>(now.AddSeconds(-1), 0.8);
+            lastData.Add("rop", lastROP);
+
+            var lastMOB = new KeyValuePair<DateTimeOffset, object>(now.AddSeconds(-1), 0.8);
+            lastData.Add("mob", lastMOB);
+
+            Console.WriteLine(JsonConvert.SerializeObject(channelsData));
+            MergeData(channelsData, lastData);
+            Console.WriteLine(JsonConvert.SerializeObject(channelsData));
             Console.ReadLine();
+
             return;
             // Create the outer dictionary
             IDictionary<string, IDictionary<DateTimeOffset, object>> outerDictionary = new Dictionary<string, IDictionary<DateTimeOffset, object>>();
@@ -74,6 +107,34 @@ namespace ConsoleTest
             Console.ReadLine();
         }
 
+        static void MergeData(Dictionary<string, Dictionary<DateTimeOffset, object>> channelsData, Dictionary<string, KeyValuePair<DateTimeOffset, object>> lastData) {
+            foreach (var ele in lastData)
+            {
+                if (channelsData.ContainsKey(ele.Key))
+                {
+                    channelsData[ele.Key].Add(ele.Value.Key, ele.Value.Value);
+                }
+                else
+                {
+                    channelsData.Add(ele.Key, new Dictionary<DateTimeOffset, object>() { { ele.Value.Key, ele.Value.Value } });
+                }
+            }
+        }
+
+
+        static void GetMultiValue(Dictionary<string, Dictionary<DateTimeOffset, object>> channelsData, string channelName, out double? start, out double? end, out double? course) {
+            if (channelsData.ContainsKey(channelName))
+            {
+                var arr = channelsData[channelName]?.Values?.OfType<double>();
+                start = arr.Min();
+                end = arr.Max();
+                course = end - start;
+            }
+            else
+            {
+                start = end = course = null;
+            }
+        }
         static double GetRandomDouble()
         {
             Random random = new Random(Guid.NewGuid().GetHashCode());

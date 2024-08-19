@@ -1,42 +1,24 @@
 ﻿using System;
 using System.Xml;
 using System.Text.Json;
+using System.Text;
 
 class Program
 {
     static void Main()
     {
-        var a = new Dictionary<int, string>{
-            { 1, "a"},
-            { 2, "b" }
-        };
+        // Sample JSON string
+        string jsonString = "{\"name\": \"John\", \"age\": 30}";
 
-        // Define a sample object
-        Person p1 = new Person
-        {
-            Name = "Alice",
-            Age = 25,
-            Email = "alice@example.com",
-            Hobbies = new List<string>()
-        };
+        // Convert JSON string to byte array
+        byte[] byteArray = Encoding.UTF8.GetBytes(jsonString);
 
-        Person p2 = new Person
-        {
-            Name = "Bob",
-            Age = 25,
-            Email = "alice@example.com",
-            Hobbies = new List<string>()
-};
-        
-        var persons = new List<Person> { p1, p2 };
-        Console.WriteLine(JsonSerializer.Serialize(persons));
-        persons.ForEach(person => { 
-            person.Age = 28;
-            person.Hobbies.Add("football");
-        });
-        Console.WriteLine(JsonSerializer.Serialize(persons));
-        
-        PrintPerson(persons.ToArray());
+        Console.ReadLine();
+
+        string jsonString2   = Encoding.UTF8.GetString(byteArray);
+
+        Console.WriteLine(jsonString);
+        // Now byteArray contains the byte representation of the JSON string
     }
 
     static public void PrintPerson(params Person[] persons) {
