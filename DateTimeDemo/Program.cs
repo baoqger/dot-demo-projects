@@ -4,6 +4,11 @@
     {
         static void Main(string[] args)
         {
+            var dic = new Dictionary<string, int>();
+            if (dic.Count() == 0) {
+                Console.WriteLine("empty dic");
+            }
+
             Console.WriteLine("Hello, World!");
             DateTimeOffset T1 = DateTimeOffset.Now;
             DateTimeOffset T2 = DateTimeOffset.Now.AddMinutes(2);
