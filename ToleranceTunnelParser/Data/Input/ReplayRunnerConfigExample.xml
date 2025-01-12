@@ -1,0 +1,170 @@
+<ReplayRunnerConfiguration xmlns="http://schemas.datacontract.org/2004/07/Slb.Prism.Shared.Library.FileReplayTool.Configuration" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+  <TenantId>drillplan-bgc-drillplan-bgc-bi</TenantId>
+  <ProvisionConfiguration>
+    <RigProvisionConfiguration>
+      <RigName>Rig-Test-FileReplayTool</RigName>
+      <RigId>58d27fbc-b9b7-4aeb-b1d4-3322a6584eae</RigId>
+    </RigProvisionConfiguration>
+    <WellProvisionConfiguration>
+      <WellConfigModel xmlns:a="http://schemas.datacontract.org/2004/07/Slb.Prism.Shared.Library.FileReplayTool.Models">
+        <a:Archivable>false</a:Archivable>
+        <a:TimeToGhost>0</a:TimeToGhost>
+        <a:TimeToLive>60</a:TimeToLive>
+      </WellConfigModel>
+      <WellCreateModel xmlns:a="http://schemas.datacontract.org/2004/07/Slb.Prism.Shared.Library.FileReplayTool.Models">
+        <a:Company>PrismFileReplayTool</a:Company>
+        <a:Name>W-Test-FileReplayTool</a:Name>
+        <a:TimeZone>+08:00</a:TimeZone>
+      </WellCreateModel>
+      <WellWitsmlFile>TestData\Local\WellInformation.xml</WellWitsmlFile>
+    </WellProvisionConfiguration>
+    <WellboreProvisionConfiguration>
+      <WellboreWitsmlTemplateFile i:nil="true"/>
+    </WellboreProvisionConfiguration>
+  </ProvisionConfiguration>
+  <StreamingConfiguration>
+    <BhaRunConfiguration>
+      <BhaRunStreamingCommand>
+        <BhaRunFileName>TestData\Local\bhaRun.tpl</BhaRunFileName>
+        <OperationTime xmlns:a="http://schemas.datacontract.org/2004/07/System">
+          <a:DateTime>2019-01-17T16:00:00Z</a:DateTime>
+          <a:OffsetMinutes>0</a:OffsetMinutes>
+        </OperationTime>
+        <StatusBha>progress</StatusBha>
+        <TubularFileName>TestData\Local\tubular.tpl</TubularFileName>
+      </BhaRunStreamingCommand>
+      <BhaRunStreamingCommand>
+        <BhaRunFileName>TestData\Local\bhaRun.tpl</BhaRunFileName>
+        <OperationTime xmlns:a="http://schemas.datacontract.org/2004/07/System">
+          <a:DateTime>2019-01-17T19:19:00Z</a:DateTime>
+          <a:OffsetMinutes>0</a:OffsetMinutes>
+        </OperationTime>
+        <StatusBha>final</StatusBha>
+        <TubularFileName>TestData\Local\tubular.tpl</TubularFileName>
+      </BhaRunStreamingCommand>
+      <BhaRunStreamingCommand>
+        <BhaRunFileName>TestData\Local\bhaRun.tpl</BhaRunFileName>
+        <OperationTime xmlns:a="http://schemas.datacontract.org/2004/07/System">
+          <a:DateTime>2019-01-17T19:22:00Z</a:DateTime>
+          <a:OffsetMinutes>0</a:OffsetMinutes>
+        </OperationTime>
+        <StatusBha>progress</StatusBha>
+        <TubularFileName>TestData\Local\tubular.tpl</TubularFileName>
+      </BhaRunStreamingCommand>
+    </BhaRunConfiguration>
+    <ChannelConfiguration>
+      <ChannelStreamingConfiguration>
+        <ContainerType>well</ContainerType>
+        <CsvFileName>TestData\Local\InputChannels.csv</CsvFileName>
+      </ChannelStreamingConfiguration>
+    </ChannelConfiguration>
+    <FluidsReportConfiguration>
+      <ContextStreamingCommand>
+        <FileName>TestData\Local\FluidsReport.json</FileName>
+        <OperationTime xmlns:a="http://schemas.datacontract.org/2004/07/System">
+          <a:DateTime>2019-01-17T16:20:00Z</a:DateTime>
+          <a:OffsetMinutes>0</a:OffsetMinutes>
+        </OperationTime>
+      </ContextStreamingCommand>
+    </FluidsReportConfiguration>
+    <RigModelConfiguration>
+      <ContextStreamingCommand>
+        <FileName>TestData\Local\RigModel.json</FileName>
+        <OperationTime xmlns:a="http://schemas.datacontract.org/2004/07/System">
+          <a:DateTime>2019-01-17T16:10:00Z</a:DateTime>
+          <a:OffsetMinutes>0</a:OffsetMinutes>
+        </OperationTime>
+      </ContextStreamingCommand>
+    </RigModelConfiguration>
+    <RigUtilizationConfiguration>
+      <ContextStreamingCommand>
+        <FileName>TestData\Local\rigUtilization.json</FileName>
+        <OperationTime xmlns:a="http://schemas.datacontract.org/2004/07/System">
+          <a:DateTime>2019-01-17T16:20:00Z</a:DateTime>
+          <a:OffsetMinutes>0</a:OffsetMinutes>
+        </OperationTime>
+      </ContextStreamingCommand>
+    </RigUtilizationConfiguration>
+    <HeartbeatConfiguration>
+      <StartTime xmlns:a="http://schemas.datacontract.org/2004/07/System">
+        <a:DateTime>2019-01-17T16:00:00Z</a:DateTime>
+        <a:OffsetMinutes>0</a:OffsetMinutes>
+      </StartTime>
+      <TimeIntervalInSeconds>600</TimeIntervalInSeconds>
+    </HeartbeatConfiguration>
+    <IndexShiftConfiguration>
+    </IndexShiftConfiguration>
+    <JobSetupConfiguration>
+      <JobName>W-Test-Job</JobName>
+      <JobSetupFile>TestData\Local\JobSetup_Input.json</JobSetupFile>
+    </JobSetupConfiguration>
+    <RelogStreamingConfiguration>
+      <ContextStreamingCommand>
+        <FileName>TestData\Local\Relogs.json</FileName>
+        <OperationTime xmlns:a="http://schemas.datacontract.org/2004/07/System">
+          <a:DateTime>2019-01-17T16:40:00Z</a:DateTime>
+          <a:OffsetMinutes>0</a:OffsetMinutes>
+        </OperationTime>
+      </ContextStreamingCommand>
+    </RelogStreamingConfiguration>
+    <SensorOffsetTableStreamingConfiguration>
+      <ContextStreamingCommand>
+        <FileName>TestData\Local\sensor_offset.json</FileName>
+        <OperationTime xmlns:a="http://schemas.datacontract.org/2004/07/System">
+          <a:DateTime>2019-01-17T16:20:00Z</a:DateTime>
+          <a:OffsetMinutes>0</a:OffsetMinutes>
+        </OperationTime>
+      </ContextStreamingCommand>
+    </SensorOffsetTableStreamingConfiguration>
+    <StreamingSpeedConfiguration>
+      <StreamingRange>
+        <SecondsBetweenMessages>0.5</SecondsBetweenMessages>
+        <SecondsPerMessage>200</SecondsPerMessage>
+        <StartTime xmlns:a="http://schemas.datacontract.org/2004/07/System">
+          <a:DateTime>2019-01-17T16:00:00Z</a:DateTime>
+          <a:OffsetMinutes>0</a:OffsetMinutes>
+        </StartTime>
+      </StreamingRange>
+      <StreamingRange>
+        <SecondsBetweenMessages>0.5</SecondsBetweenMessages>
+        <SecondsPerMessage>10</SecondsPerMessage>
+        <StartTime xmlns:a="http://schemas.datacontract.org/2004/07/System">
+          <a:DateTime>2019-01-17T19:30:00Z</a:DateTime>
+          <a:OffsetMinutes>0</a:OffsetMinutes>
+        </StartTime>
+      </StreamingRange>
+    </StreamingSpeedConfiguration>
+    <TrajectoryConfiguration>
+      <TrajectoryStreamingConfiguration>
+        <CsvWithTimeStamp>TestData\Local\surveyWithTime.csv</CsvWithTimeStamp>
+      </TrajectoryStreamingConfiguration>
+    </TrajectoryConfiguration>
+    <WellboreConfiguration>
+      <ContextStreamingCommand>
+        <FileName>TestData\Local\wellbore.tpl</FileName>
+        <OperationTime xmlns:a="http://schemas.datacontract.org/2004/07/System">
+          <a:DateTime>2019-01-17T19:20:00Z</a:DateTime>
+          <a:OffsetMinutes>0</a:OffsetMinutes>
+        </OperationTime>
+      </ContextStreamingCommand>
+    </WellboreConfiguration>
+    <WellboreGeometryConfiguration>
+      <ContextStreamingCommand>
+        <FileName>TestData\Local\WellboreGeometry.xml</FileName>
+        <OperationTime xmlns:a="http://schemas.datacontract.org/2004/07/System">
+          <a:DateTime>2019-01-17T16:20:00Z</a:DateTime>
+          <a:OffsetMinutes>0</a:OffsetMinutes>
+        </OperationTime>
+      </ContextStreamingCommand>
+    </WellboreGeometryConfiguration>
+	  <DrillingParameterConfiguration>
+	      <ContextStreamingCommand>
+		      <FileName>TestData\Local\drillingParameter.json</FileName>
+		      <OperationTime xmlns:a="http://schemas.datacontract.org/2004/07/System">
+			      <a:DateTime>2019-01-17T16:20:00Z</a:DateTime>
+			      <a:OffsetMinutes>0</a:OffsetMinutes>
+		      </OperationTime>
+	      </ContextStreamingCommand>
+      </DrillingParameterConfiguration>
+  </StreamingConfiguration>
+</ReplayRunnerConfiguration>
