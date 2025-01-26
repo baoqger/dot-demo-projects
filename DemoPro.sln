@@ -124,11 +124,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeserializeDemo", "Deserial
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DateTimeDemo", "DateTimeDemo\DateTimeDemo.csproj", "{1D37FDB0-F596-4309-A388-483210502E2F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToleranceTunnelParser", "ToleranceTunnelParser\ToleranceTunnelParser.csproj", "{80B7BBAD-7C0D-48CC-9DCF-E13CC75C79CC}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataContractSerializerDemo", "DataContractSerializerDemo\DataContractSerializerDemo.csproj", "{7347B72F-5189-4CB6-AA54-33A0C4041A01}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XMLSerializerDemo", "XMLSerializerDemo\XMLSerializerDemo.csproj", "{D6EAE666-CE81-494C-92DF-0240B912FA58}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XMLSerializerDemo", "XMLSerializerDemo\XMLSerializerDemo.csproj", "{D6EAE666-CE81-494C-92DF-0240B912FA58}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DebugLog", "DebugLog\DebugLog.csproj", "{476F30B2-CBF3-49BC-BEE5-33F39368BB87}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MultiTaskDemo", "MultiTaskDemo\MultiTaskDemo.csproj", "{6A45178C-DD4A-4977-892C-7A663BE5A406}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThreadLocalDemo", "ThreadLocalDemo\ThreadLocalDemo.csproj", "{6477570C-E19F-422D-A972-969542536768}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -372,10 +376,6 @@ Global
 		{1D37FDB0-F596-4309-A388-483210502E2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D37FDB0-F596-4309-A388-483210502E2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1D37FDB0-F596-4309-A388-483210502E2F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{80B7BBAD-7C0D-48CC-9DCF-E13CC75C79CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{80B7BBAD-7C0D-48CC-9DCF-E13CC75C79CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{80B7BBAD-7C0D-48CC-9DCF-E13CC75C79CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{80B7BBAD-7C0D-48CC-9DCF-E13CC75C79CC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7347B72F-5189-4CB6-AA54-33A0C4041A01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7347B72F-5189-4CB6-AA54-33A0C4041A01}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7347B72F-5189-4CB6-AA54-33A0C4041A01}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -384,6 +384,18 @@ Global
 		{D6EAE666-CE81-494C-92DF-0240B912FA58}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D6EAE666-CE81-494C-92DF-0240B912FA58}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D6EAE666-CE81-494C-92DF-0240B912FA58}.Release|Any CPU.Build.0 = Release|Any CPU
+		{476F30B2-CBF3-49BC-BEE5-33F39368BB87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{476F30B2-CBF3-49BC-BEE5-33F39368BB87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{476F30B2-CBF3-49BC-BEE5-33F39368BB87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{476F30B2-CBF3-49BC-BEE5-33F39368BB87}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A45178C-DD4A-4977-892C-7A663BE5A406}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A45178C-DD4A-4977-892C-7A663BE5A406}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A45178C-DD4A-4977-892C-7A663BE5A406}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A45178C-DD4A-4977-892C-7A663BE5A406}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6477570C-E19F-422D-A972-969542536768}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6477570C-E19F-422D-A972-969542536768}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6477570C-E19F-422D-A972-969542536768}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6477570C-E19F-422D-A972-969542536768}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
