@@ -11,7 +11,7 @@ namespace GenericAction.Controllers
         private static readonly string[] Summaries = new[]
         {
         "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-    };
+        };
 
         private readonly ILogger<WeatherForecastController> _logger;
 
@@ -23,6 +23,10 @@ namespace GenericAction.Controllers
         [HttpGet(Name = "GetWeatherForecast")]
         public IEnumerable<WeatherForecast> Get()
         {
+            var test = "test string";
+            Task.Run(async () => {
+                await MigrateWorkflow(test);
+            });
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
                 Date = DateTime.Now.AddDays(index),
@@ -31,6 +35,11 @@ namespace GenericAction.Controllers
             })
             .ToArray();
         }
+
+        private async Task MigrateWorkflow(string a) {
+            await Task.Delay(5000);
+            Console.WriteLine("debug workflow..." + a);
+        } 
 
         /// <summary>
         /// This is my action method.
