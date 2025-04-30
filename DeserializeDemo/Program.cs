@@ -3,6 +3,7 @@ using Slb.Prism.Shared.Library.Protocol.V3;
 using Version = Slb.Prism.Shared.Library.Protocol.Version;
 using Avro;
 using Energistics.Datatypes;
+using Newtonsoft.Json;
 
 namespace DeserializeDemo
 {
@@ -10,6 +11,28 @@ namespace DeserializeDemo
     {
         static void Main(string[] args)
         {
+            var c1 = new Company();
+            c1.Country = "China";
+            c1.Name = "OrgPro";
+
+            var c2 = new Company();
+            c2.Country = "USA";
+            c2.Name = "My";
+
+            var companies = new List<Company>();
+            companies.Add(c1);
+            companies.Add(c2);
+
+            var str = JsonConvert.SerializeObject(companies);
+
+            Console.WriteLine(str); 
+
+            var obj = JsonConvert.DeserializeObject<Company>(str);
+
+            Console.WriteLine(obj);
+
+            return;
+
             Console.WriteLine("Hello, World!");
 
             var p = new Person() {

@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json.Linq;
+using System.Text;
 
 namespace ComputeCharNumbers
 {
@@ -13,10 +14,23 @@ namespace ComputeCharNumbers
             // Parse the JSON data to JToken
             JToken jsonToken = JToken.Parse(jsonData);
 
+            var number = jsonToken.Count();
+
+            var memsize = CalculateSize(jsonData);
+
+            var average = memsize / number;
+
+            return;
+                
             // Calculate the average string length at the outermost object level
             double averageStringLength = CalculateAverageStringLength(jsonToken);
 
             Console.WriteLine($"The average string length at the outermost object level is: {averageStringLength}");
+        }
+
+        static long CalculateSize(string jsonstr)
+        {
+            return Encoding.UTF8.GetByteCount(jsonstr); // Size in bytes
         }
 
         static double CalculateAverageStringLength(JToken token)

@@ -10,12 +10,15 @@
             }
 
             Console.WriteLine("Hello, World!");
-            DateTimeOffset T1 = DateTimeOffset.Now;
-            DateTimeOffset T2 = DateTimeOffset.Now.AddMinutes(2);
+            DateTimeOffset? T1 = DateTimeOffset.UtcNow;
+            DateTimeOffset? T2 = DateTimeOffset.UtcNow.AddMinutes(2);
 
-            TimeSpan t = T1 - T2;
+            var a = T1.Value.UtcDateTime;
 
-            if (t.TotalMinutes >= 3)
+
+            TimeSpan? t = T1 - T2;
+
+            if (t.Value.TotalMinutes >= 3)
             {
                 Console.WriteLine("debug earlier than 3mins");
             }
