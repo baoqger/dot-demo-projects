@@ -142,7 +142,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OldProjectTest", "OldProjec
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ComputeCharNumbers", "ComputeCharNumbers\ComputeCharNumbers.csproj", "{FE519959-E757-4075-9958-375BD403096E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComputeMD5", "ComputeMD5\ComputeMD5.csproj", "{7AF1DC8F-1442-4476-A13D-46CFCCE1A766}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ComputeMD5", "ComputeMD5\ComputeMD5.csproj", "{7AF1DC8F-1442-4476-A13D-46CFCCE1A766}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ObjectDetection", "ObjectDetection\ObjectDetection.csproj", "{3B054D4F-C74E-40E1-AAB8-85C979C67BFC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ROPPredictor", "ROPPredictor\ROPPredictor.csproj", "{DAE50A2E-4AEE-4CFA-B58F-1E5E1595EE61}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ROPPredictorService", "ROPPredictorService\ROPPredictorService.csproj", "{C122E9BD-802E-4D3A-A28C-98FFC98179E7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -426,6 +432,18 @@ Global
 		{7AF1DC8F-1442-4476-A13D-46CFCCE1A766}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7AF1DC8F-1442-4476-A13D-46CFCCE1A766}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7AF1DC8F-1442-4476-A13D-46CFCCE1A766}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B054D4F-C74E-40E1-AAB8-85C979C67BFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B054D4F-C74E-40E1-AAB8-85C979C67BFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B054D4F-C74E-40E1-AAB8-85C979C67BFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B054D4F-C74E-40E1-AAB8-85C979C67BFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DAE50A2E-4AEE-4CFA-B58F-1E5E1595EE61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAE50A2E-4AEE-4CFA-B58F-1E5E1595EE61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAE50A2E-4AEE-4CFA-B58F-1E5E1595EE61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAE50A2E-4AEE-4CFA-B58F-1E5E1595EE61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C122E9BD-802E-4D3A-A28C-98FFC98179E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C122E9BD-802E-4D3A-A28C-98FFC98179E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C122E9BD-802E-4D3A-A28C-98FFC98179E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C122E9BD-802E-4D3A-A28C-98FFC98179E7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
