@@ -146,9 +146,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ComputeMD5", "ComputeMD5\Co
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ObjectDetection", "ObjectDetection\ObjectDetection.csproj", "{3B054D4F-C74E-40E1-AAB8-85C979C67BFC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ROPPredictor", "ROPPredictor\ROPPredictor.csproj", "{DAE50A2E-4AEE-4CFA-B58F-1E5E1595EE61}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ROPPredictor", "ROPPredictor\ROPPredictor.csproj", "{DAE50A2E-4AEE-4CFA-B58F-1E5E1595EE61}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ROPPredictorService", "ROPPredictorService\ROPPredictorService.csproj", "{C122E9BD-802E-4D3A-A28C-98FFC98179E7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ROPPredictorService", "ROPPredictorService\ROPPredictorService.csproj", "{C122E9BD-802E-4D3A-A28C-98FFC98179E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AzureBlobTest", "AzureBlobTest\AzureBlobTest.csproj", "{D75BCF45-2A06-4AA6-93D1-0BE0A30F2C61}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -444,6 +446,10 @@ Global
 		{C122E9BD-802E-4D3A-A28C-98FFC98179E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C122E9BD-802E-4D3A-A28C-98FFC98179E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C122E9BD-802E-4D3A-A28C-98FFC98179E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D75BCF45-2A06-4AA6-93D1-0BE0A30F2C61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D75BCF45-2A06-4AA6-93D1-0BE0A30F2C61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D75BCF45-2A06-4AA6-93D1-0BE0A30F2C61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D75BCF45-2A06-4AA6-93D1-0BE0A30F2C61}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
