@@ -152,7 +152,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ROPPredictorService", "ROPP
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AzureBlobTest", "AzureBlobTest\AzureBlobTest.csproj", "{D75BCF45-2A06-4AA6-93D1-0BE0A30F2C61}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AzureBlobResearch", "AzureBlobResearch\AzureBlobResearch.csproj", "{9D86B15B-2E25-49DB-9D26-AD845F5B8697}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AzureBlobResearch", "AzureBlobResearch\AzureBlobResearch.csproj", "{9D86B15B-2E25-49DB-9D26-AD845F5B8697}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProcessCSVFile", "ProcessCSVFile\ProcessCSVFile.csproj", "{CF02BD8B-7C1E-4224-970C-400D560DBC5E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CountNumberCSV", "CountNumberCSV\CountNumberCSV.csproj", "{EFFC141A-CEA6-4137-B717-3979D0DF80D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenAIChatApp", "GenAIChatApp\GenAIChatApp.csproj", "{CD97F37C-0F84-4015-90AE-7CC4F9807EB3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -456,6 +462,18 @@ Global
 		{9D86B15B-2E25-49DB-9D26-AD845F5B8697}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9D86B15B-2E25-49DB-9D26-AD845F5B8697}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9D86B15B-2E25-49DB-9D26-AD845F5B8697}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF02BD8B-7C1E-4224-970C-400D560DBC5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF02BD8B-7C1E-4224-970C-400D560DBC5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF02BD8B-7C1E-4224-970C-400D560DBC5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF02BD8B-7C1E-4224-970C-400D560DBC5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFFC141A-CEA6-4137-B717-3979D0DF80D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFFC141A-CEA6-4137-B717-3979D0DF80D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFFC141A-CEA6-4137-B717-3979D0DF80D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFFC141A-CEA6-4137-B717-3979D0DF80D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD97F37C-0F84-4015-90AE-7CC4F9807EB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD97F37C-0F84-4015-90AE-7CC4F9807EB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD97F37C-0F84-4015-90AE-7CC4F9807EB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD97F37C-0F84-4015-90AE-7CC4F9807EB3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
