@@ -160,6 +160,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CountNumberCSV", "CountNumb
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenAIChatApp", "GenAIChatApp\GenAIChatApp.csproj", "{CD97F37C-0F84-4015-90AE-7CC4F9807EB3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JObjectTest", "JObjectTest\JObjectTest.csproj", "{208999D1-3A1F-423F-BD64-B7B906058AAB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SnakeCamelConvertion", "SnakeCamelConvertion\SnakeCamelConvertion.csproj", "{31983B4E-F813-49E6-A467-A718C8717ACB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -474,6 +478,14 @@ Global
 		{CD97F37C-0F84-4015-90AE-7CC4F9807EB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CD97F37C-0F84-4015-90AE-7CC4F9807EB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CD97F37C-0F84-4015-90AE-7CC4F9807EB3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{208999D1-3A1F-423F-BD64-B7B906058AAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{208999D1-3A1F-423F-BD64-B7B906058AAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{208999D1-3A1F-423F-BD64-B7B906058AAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{208999D1-3A1F-423F-BD64-B7B906058AAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31983B4E-F813-49E6-A467-A718C8717ACB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31983B4E-F813-49E6-A467-A718C8717ACB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31983B4E-F813-49E6-A467-A718C8717ACB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31983B4E-F813-49E6-A467-A718C8717ACB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
