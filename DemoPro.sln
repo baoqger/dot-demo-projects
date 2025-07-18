@@ -164,6 +164,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JObjectTest", "JObjectTest\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SnakeCamelConvertion", "SnakeCamelConvertion\SnakeCamelConvertion.csproj", "{31983B4E-F813-49E6-A467-A718C8717ACB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeDepthConversion", "TimeDepthConversion\TimeDepthConversion.csproj", "{7EF3EE3D-10D6-4DA2-8936-CC43040C0FC7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeDepthConversionEnhance", "TimeDepthConversionEnhance\TimeDepthConversionEnhance.csproj", "{DF867C0B-F608-4842-A11F-D37F92EC6603}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "timedepthconversionoptimized", "timedepthconversionoptimized\timedepthconversionoptimized.csproj", "{CE3A20EF-705F-4256-BACC-322A0A7E2428}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -486,6 +492,18 @@ Global
 		{31983B4E-F813-49E6-A467-A718C8717ACB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{31983B4E-F813-49E6-A467-A718C8717ACB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{31983B4E-F813-49E6-A467-A718C8717ACB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EF3EE3D-10D6-4DA2-8936-CC43040C0FC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EF3EE3D-10D6-4DA2-8936-CC43040C0FC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EF3EE3D-10D6-4DA2-8936-CC43040C0FC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EF3EE3D-10D6-4DA2-8936-CC43040C0FC7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF867C0B-F608-4842-A11F-D37F92EC6603}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF867C0B-F608-4842-A11F-D37F92EC6603}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF867C0B-F608-4842-A11F-D37F92EC6603}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF867C0B-F608-4842-A11F-D37F92EC6603}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE3A20EF-705F-4256-BACC-322A0A7E2428}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE3A20EF-705F-4256-BACC-322A0A7E2428}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE3A20EF-705F-4256-BACC-322A0A7E2428}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE3A20EF-705F-4256-BACC-322A0A7E2428}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
