@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 class Program
 {
-    const double DepthThreshold = 5.0;
+    const double DepthThreshold = 0;
 
     static void Main()
     {

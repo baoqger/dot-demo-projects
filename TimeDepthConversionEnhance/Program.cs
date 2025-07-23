@@ -11,51 +11,6 @@ class Program
 
     static void Main()
     {
-        string json = @"{
-            ""wellBalance.ECD_RT_DEPTH"": {
-                ""2025-07-11T15:28:02.000Z"": {
-                    ""profilePoints"": [
-                        {
-                            ""md"": 0.0,
-                            ""tvd"": 0.0,
-                            ""pressure"": { ""p50"": 101.325 },
-                            ""ecd"": { ""p50"": ""NaN"" },
-                            ""esdPressure"": { ""p50"": 101.325 },
-                            ""esd"": { ""p50"": ""NaN"" }
-                        },
-                        {
-                            ""md"": 10.0,
-                            ""tvd"": 9.8,
-                            ""pressure"": { ""p50"": 201.325 },
-                            ""ecd"": { ""p50"": 10.5 },
-                            ""esdPressure"": { ""p50"": 201.325 },
-                            ""esd"": { ""p50"": 10.5 }
-                        }
-                    ]
-                },
-                ""2025-07-11T15:29:02.000Z"": {
-                    ""profilePoints"": [
-                        {
-                            ""md"": 3.0,
-                            ""tvd"": 3.0,
-                            ""pressure"": { ""p50"": 99.99 },
-                            ""ecd"": { ""p50"": ""NaN"" },
-                            ""esdPressure"": { ""p50"": 99.99 },
-                            ""esd"": { ""p50"": ""NaN"" }
-                        },
-                        {
-                            ""md"": 10.0,
-                            ""tvd"": 9.8,
-                            ""pressure"": { ""p50"": 201.325 },
-                            ""ecd"": { ""p50"": 10.5 },
-                            ""esdPressure"": { ""p50"": 201.325 },
-                            ""esd"": { ""p50"": 10.5 }
-                        }
-                    ]
-                }
-            }
-        }";
-
         string inputFilePath = @"C:\Users\jbao6\Desktop\dev\cementing\pressurewindow-decimation.json";
         var inputcontent = File.ReadAllText(inputFilePath);
 

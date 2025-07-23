@@ -170,6 +170,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeDepthConversionEnhance"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "timedepthconversionoptimized", "timedepthconversionoptimized\timedepthconversionoptimized.csproj", "{CE3A20EF-705F-4256-BACC-322A0A7E2428}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeDepthConversionFixedDepthParallel", "TimeDepthConversionFixedDepthParallel\TimeDepthConversionFixedDepthParallel.csproj", "{A3BD0BD0-D17F-4817-BA8C-ADCC9828E2F5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -504,6 +506,10 @@ Global
 		{CE3A20EF-705F-4256-BACC-322A0A7E2428}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CE3A20EF-705F-4256-BACC-322A0A7E2428}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CE3A20EF-705F-4256-BACC-322A0A7E2428}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3BD0BD0-D17F-4817-BA8C-ADCC9828E2F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3BD0BD0-D17F-4817-BA8C-ADCC9828E2F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3BD0BD0-D17F-4817-BA8C-ADCC9828E2F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3BD0BD0-D17F-4817-BA8C-ADCC9828E2F5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

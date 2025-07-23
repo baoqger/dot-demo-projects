@@ -9,37 +9,6 @@ class Program
 
     static void Main()
     {
-        string json = @"{
-            ""wellBalance.ECD_RT_DEPTH"": {
-                ""2025-07-11T15:28:02.000Z"": {
-                    ""profilePoints"": [
-                        {""depth"": 0.0, ""pressure"": 0},
-                        {""depth"": 10.0, ""pressure"": 100},
-                        {""depth"": 20.0, ""pressure"": 200},
-                        {""depth"": 30.0, ""pressure"": 300}
-                    ]
-                },
-                ""2025-07-11T15:29:02.000Z"": {
-                    ""profilePoints"": [
-                        {""depth"": 3.0, ""pressure"": 0},
-                        {""depth"": 10.0, ""pressure"": 100},
-                        {""depth"": 20.0, ""pressure"": 200},
-                        {""depth"": 30.0, ""pressure"": 300},
-                        {""depth"": 40.0, ""pressure"": 400}
-                    ]
-                },
-                ""2025-07-11T15:30:02.000Z"": {
-                    ""profilePoints"": [
-                        {""depth"": 3.5, ""pressure"": 0},
-                        {""depth"": 10.0, ""pressure"": 100},
-                        {""depth"": 20.0, ""pressure"": 200},
-                        {""depth"": 30.0, ""pressure"": 300},
-                        {""depth"": 40.0, ""pressure"": 400},
-                        {""depth"": 50.0, ""pressure"": 400}
-                    ]
-                }
-            }
-        }";
 
         string inputFilePath = @"C:\Users\jbao6\Desktop\dev\cementing\mockdata-margin.json";
         var inputcontent = File.ReadAllText(inputFilePath);
