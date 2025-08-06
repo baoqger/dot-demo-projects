@@ -1,24 +1,22 @@
 ﻿using System;
 using System.Xml;
 using System.Text.Json;
-using System.Text;
+using Newtonsoft.Json;
 
 class Program
 {
     static void Main()
     {
-        // Sample JSON string
-        string jsonString = "{\"name\": \"John\", \"age\": 30}";
+        var person1 = new Person { Name = "Alice", Age = 30, Email = "test", Hobbies = new List<string> { "Reading", "Hiking" } };
+        var person2 = new Person { Name = "Bob", Age = 25, Email = "test2", Hobbies = new List<string> { "Gaming", "Cooking" } };   
+        var person3 = new Person { Name = "Charlie", Age = 35, Email = "test3", Hobbies = new List<string> { "Traveling", "Photography" } };
+        var group = new List<Person> { person1, person2, person3 }; 
+        var json = JsonConvert.SerializeObject(group);
+        Console.WriteLine("Serialized JSON:" + json);
 
-        // Convert JSON string to byte array
-        byte[] byteArray = Encoding.UTF8.GetBytes(jsonString);
+        List<NewPerson> c = JsonConvert.DeserializeObject<List<NewPerson>>(json);
 
-        Console.ReadLine();
-
-        string jsonString2   = Encoding.UTF8.GetString(byteArray);
-
-        Console.WriteLine(jsonString);
-        // Now byteArray contains the byte representation of the JSON string
+        Console.WriteLine("Deserialized Company Name: ");
     }
 
     static public void PrintPerson(params Person[] persons) {
@@ -26,6 +24,18 @@ class Program
             Console.WriteLine(persons[i].Name);
         }
     }
+}
+
+class Company { 
+    public string Name { get; set; }
+    public List<Person> Employees { get; set; }
+}
+
+
+class NewPerson: Person
+{
+    public string Address { get; set; }
+    public string PhoneNumber { get; set; }
 }
 
 class Person

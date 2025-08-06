@@ -19,6 +19,7 @@ class Program
         var root = doc.RootElement;
         var series = root.GetProperty("wellBalance.ECD_RT_DEPTH");
 
+        var test = series.EnumerateObject();
         var watch = Stopwatch.StartNew();
 
         var depthSeries = new ConcurrentDictionary<double, JsonArray>();

@@ -2,20 +2,22 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.Json;
+using System.Text.Json.Nodes;
 
 class Program
 {
     const double DepthThreshold = 5.0;
 
     static void Main()
-    {
-
+    {        
         string inputFilePath = @"C:\Users\jbao6\Desktop\dev\cementing\mockdata-margin.json";
         var inputcontent = File.ReadAllText(inputFilePath);
 
         var doc = JsonDocument.Parse(inputcontent);
         var root = doc.RootElement;
         var series = root.GetProperty("wellBalance.ECD_RT_DEPTH");
+
+        // count the number of timestamps 
 
         // Step 1: Collect all depths across timestamps (flattened list)
         var allDepths = new List<double>();

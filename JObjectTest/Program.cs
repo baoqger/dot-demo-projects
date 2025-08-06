@@ -9,9 +9,6 @@ class Program
 
     static void Main(string[] args)
     {
-
-        Console.WriteLine(Guid.NewGuid().ToString());
-        return;
         
         string inputFilePath = @"C:\Users\jbao6\Desktop\dev\cementing\DigitalCementPlan.json";
         var inputcontent = File.ReadAllText(inputFilePath);
