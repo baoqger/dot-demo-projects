@@ -1,4 +1,5 @@
-﻿using PrepareCementingPressureData;
+﻿using Newtonsoft.Json.Linq;
+using PrepareCementingPressureData;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -71,27 +72,26 @@ class Program
             }
         }";
 
-        string inputFilePath = @"C:\Users\jbao6\Desktop\dev\cementing\cementingpressuretestdata.json";
+        string inputFilePath = @"C:\Users\jbao6\Desktop\dev\cementing\convertingtestdata.json";
         var inputcontent = File.ReadAllText(inputFilePath);
-        string outputFilePath = @"C:\Users\jbao6\Desktop\dev\cementing\cementingpressuretestdata-depth-sorted.json";
+        string outputFilePath = @"C:\Users\jbao6\Desktop\dev\cementing\convertingtestdata-depth-sorted.json";
 
-        // Parse JSON into JsonDocument
-        using var document = JsonDocument.Parse(inputcontent);
-        var root = document.RootElement;
+        // Parse JSON into JObject
+        var root = JObject.Parse(inputcontent);
 
         var result = new Dictionary<string, Dictionary<DateTimeOffset, object>>();
 
-        if (root.TryGetProperty("AnnulusDepthBasedResults", out JsonElement annulusResults))
+        if (root.TryGetValue("AnnulusDepthBasedResults", out JToken annulusResultsToken) && annulusResultsToken is JObject annulusResults)
         {
             var innerDict = new Dictionary<DateTimeOffset, object>();
 
-            foreach (JsonProperty dateProperty in annulusResults.EnumerateObject())
+            foreach (var dateProperty in annulusResults.Properties())
             {
                 if (DateTimeOffset.TryParse(dateProperty.Name, out DateTimeOffset dateTime))
                 {
-                    // Store the JsonElement array as dynamic (JsonElement)
-                    // innerDict[dateTime] = dateProperty.Value;
-                    innerDict[dateTime] = JsonSerializer.Deserialize<CementingPressureProfile>(dateProperty.Value.GetRawText());
+                    // Deserialize the value into CementingPressureProfile
+                    var profile = dateProperty.Value.ToObject<CementingPressureProfile>();
+                    innerDict[dateTime] = profile;
                 }
             }
 
@@ -144,10 +144,10 @@ class Program
 
     static void GenerateTestDataSet() {
         var dataset = DataSetGenerator.GenerateDataset();
-        string outputFilePath = @"C:\Users\jbao6\Desktop\dev\cementing\cementingpressuretestdata.json";
+        string outputFilePath = @"C:\Users\jbao6\Desktop\dev\cementing\cementingpressuretestdata-compressed.json";
         var depthJSON = JsonSerializer.Serialize(dataset, new JsonSerializerOptions
         {
-            WriteIndented = true,
+            WriteIndented = false,
             // PropertyNamingPolicy = JsonNamingPolicy.CamelCase
         });
         File.WriteAllText(outputFilePath, depthJSON);

@@ -20,8 +20,8 @@ namespace PrepareCementingPressureData
         /// <summary>
         /// Convert time series dictionary to depth series dictionary with arrays of entries per depth.
         /// </summary>
-        /// <param name="timeSeriesData">Dictionary keyed by string and DateTimeOffset with dynamic array values</param>
-        /// <returns>Dictionary keyed by string and double (MD) with list of dynamic values</returns>
+        /// <param name="timeSeriesData">Dictionary keyed by string and DateTimeOffset with object array values</param>
+        /// <returns>Dictionary keyed by string and double (MD) with list of values</returns>
         public static ConcurrentDictionary<string, Dictionary<string, CementingTimeBasedProfile>>
             ConvertTimeSeriesToDepthSeriesStronglyTyped(
                 Dictionary<string, Dictionary<DateTimeOffset, object>> timeSeriesData)
