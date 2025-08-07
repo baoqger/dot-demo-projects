@@ -1,6 +1,7 @@
 ﻿using PrepareCementingPressureData;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text.Json;
 
 class Program
@@ -70,18 +71,19 @@ class Program
             }
         }";
 
-        string inputFilePath = @"C:\Users\jbao6\Desktop\dev\cementing\convertingtestdata.json";
+        string inputFilePath = @"C:\Users\jbao6\Desktop\dev\cementing\cementingpressuretestdata.json";
         var inputcontent = File.ReadAllText(inputFilePath);
+        string outputFilePath = @"C:\Users\jbao6\Desktop\dev\cementing\cementingpressuretestdata-depth-sorted.json";
 
         // Parse JSON into JsonDocument
         using var document = JsonDocument.Parse(inputcontent);
         var root = document.RootElement;
 
-        var result = new Dictionary<string, Dictionary<DateTimeOffset, dynamic>>();
+        var result = new Dictionary<string, Dictionary<DateTimeOffset, object>>();
 
         if (root.TryGetProperty("AnnulusDepthBasedResults", out JsonElement annulusResults))
         {
-            var innerDict = new Dictionary<DateTimeOffset, dynamic>();
+            var innerDict = new Dictionary<DateTimeOffset, object>();
 
             foreach (JsonProperty dateProperty in annulusResults.EnumerateObject())
             {
@@ -97,23 +99,33 @@ class Program
         }
 
         // Example: Accessing data
-        PrintCementingPressureProfile(result);
+        // PrintCementingPressureProfile(result);
 
-
+        var watch = Stopwatch.StartNew();
         var depthSeriesData = DepthSeriesConverter.ConvertTimeSeriesToDepthSeriesStronglyTyped(result);
+        var processTime = watch.ElapsedMilliseconds;
+        Console.WriteLine($"Processing time: {processTime} ms");
 
-        foreach (var outerKvp in depthSeriesData)
+        //foreach (var outerKvp in depthSeriesData)
+        //{
+        //    Console.WriteLine($"Key: {outerKvp.Key}");
+        //    foreach (var depthKvp in outerKvp.Value)
+        //    {
+        //        Console.WriteLine($"Depth (MD): {depthKvp.Key}, Count: {depthKvp.Value.Count}");
+        //        foreach (var resultWithTime in depthKvp.Value)
+        //        {
+        //            Console.WriteLine($"  Pressure: {resultWithTime.Pressure}, TimeIndex: {resultWithTime.TimeIndex}");
+        //        }
+        //    }
+        //}
+
+        var depthJSON = JsonSerializer.Serialize(depthSeriesData, new JsonSerializerOptions
         {
-            Console.WriteLine($"Key: {outerKvp.Key}");
-            foreach (var depthKvp in outerKvp.Value)
-            {
-                Console.WriteLine($"Depth (MD): {depthKvp.Key}, Count: {depthKvp.Value.Count}");
-                foreach (var resultWithTime in depthKvp.Value)
-                {
-                    Console.WriteLine($"  Pressure: {resultWithTime.Pressure}, TimeIndex: {resultWithTime.TimeIndex}");
-                }
-            }
-        }
+            WriteIndented = true,
+            // PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+        });
+
+        File.WriteAllText(outputFilePath, depthJSON);
     }
 
     static void PrintCementingPressureProfile(Dictionary<string, Dictionary<DateTimeOffset, dynamic>> timeSeriesData)
@@ -128,5 +140,16 @@ class Program
                 Console.WriteLine($"  MD: {item.MD}");
             }
         }
-    }   
+    }
+
+    static void GenerateTestDataSet() {
+        var dataset = DataSetGenerator.GenerateDataset();
+        string outputFilePath = @"C:\Users\jbao6\Desktop\dev\cementing\cementingpressuretestdata.json";
+        var depthJSON = JsonSerializer.Serialize(dataset, new JsonSerializerOptions
+        {
+            WriteIndented = true,
+            // PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+        });
+        File.WriteAllText(outputFilePath, depthJSON);
+    }
 }
